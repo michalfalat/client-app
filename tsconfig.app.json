@@ -3,7 +3,8 @@
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
     "outDir": "./out-tsc/app",
-    "types": []
+    "types": [],
+    "experimentalDecorators": false
   },
   "files": [
     "src/main.ts",
