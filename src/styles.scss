@@ -37,3 +37,13 @@ $client-app-theme: mat-light-theme((
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+div.row {
+  display: flex;
+  flex-direction: row;
+}
+
+div.column {
+  display: flex;
+  flex-direction: column;
+}
