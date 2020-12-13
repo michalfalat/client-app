@@ -22,4 +22,8 @@ export class RegisterHomeComponent extends CommonComponent implements OnInit {
       remember: false,
     });
   }
+
+  onRegister(): void {
+    this.authFacade.register({});
+  }
 }

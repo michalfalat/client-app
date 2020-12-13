@@ -13,3 +13,22 @@ export interface IAuthRegisterUserRequest {
   email: string;
   password: string;
 }
+
+export interface IAuthRegisterUserResponse {
+  verification: boolean;
+}
+
+export interface IAuthChangePasswordRequest {
+  oldPassword: string;
+  newPassword: string;
+}
+
+export interface IAuthForgotPasswordRequest {
+  email: string;
+}
+
+export interface IAuthUserInfoResponse {
+  name: string;
+  surname: string;
+  email: string;
+}

@@ -1,17 +1,26 @@
 import { Action, createReducer, on } from '@ngrx/store';
-import { authLoginResponse } from './auth.actions';
+import { IAuthLoginUserResponse, IAuthRegisterUserResponse, IAuthUserInfoResponse } from '../../model/auth/auth.model';
+import { authLoginResponseAction, authRegisterResponseAction, authUserInfoResponseAction } from './auth.actions';
 
 export default interface IAuthState {
-  loggedUser?: any;
+  loggedUser?: IAuthLoginUserResponse;
+  registerUser?: IAuthRegisterUserResponse;
+  userInfo?: IAuthUserInfoResponse;
 }
 
 export const initialState: IAuthState = {};
 
 const _authReducer = createReducer(
   initialState,
-  on(authLoginResponse, (state: IAuthState, payload) => {
-    return { ...state, loggedUser: payload };
-  })
+  on(authLoginResponseAction, (state: IAuthState, payload) => {
+    return { ...state, loggedUser: payload?.response };
+  }),
+  on(authRegisterResponseAction, (state: IAuthState, payload) => {
+    return { ...state, registerUser: payload?.response };
+  }),
+  on(authUserInfoResponseAction, (state: IAuthState, payload) => {
+    return { ...state, userIngo: payload?.response };
+  }),
 );
 
 export function authReducer(state: IAuthState, action: Action): any {
