@@ -18,18 +18,16 @@
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e"
+        ]
       }
     }
   },
   "projects": {
-    "client": {
-      "tags": []
-    },
-    "client-e2e": {
-      "tags": [],
-      "implicitDependencies": ["client"]
-    },
     "core": {
       "tags": []
     },
@@ -38,6 +36,15 @@
     },
     "core-translate": {
       "tags": []
+    },
+    "example-app": {
+      "tags": []
+    },
+    "example-app-e2e": {
+      "tags": [],
+      "implicitDependencies": [
+        "example-app"
+      ]
     }
   }
 }

@@ -1,0 +1,11 @@
+<mat-toolbar>
+  <span>My Application</span>
+  <div>
+    <button mat-button [matMenuTriggerFor]="menu">{{ 'general.language' | translate }}</button>
+    <mat-menu #menu="matMenu">
+      <div class="row" *ngFor="let lang of languages">
+        <button mat-button (click)="setLanguage(lang)">{{ lang | uppercase }}</button>
+      </div>
+    </mat-menu>
+  </div>
+</mat-toolbar>

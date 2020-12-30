@@ -5,10 +5,9 @@ import { HeaderComponent } from '../header/header.component';
 import { SharedModule } from '../shared.module';
 import { LayoutRoutingModule } from './layout-routing.module';
 import { MainLayoutComponent } from './main-layout/main-layout.component';
-import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [MainLayoutComponent, HeaderComponent],
-  imports: [CommonModule, RouterModule, LayoutRoutingModule, SharedModule, MatToolbarModule],
+  imports: [CommonModule, RouterModule, LayoutRoutingModule, SharedModule],
 })
 export class LayoutModule {}
