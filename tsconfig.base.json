@@ -16,7 +16,9 @@
     "baseUrl": ".",
     "paths": {
       "@client-platform/core": ["libs/core/src/index.ts"],
-      "@client-platform/core-ui": ["libs/core-ui/src/index.ts"]
+      "@client-platform/core-ui": ["libs/core-ui/src/index.ts"],
+      "@client-platform/app-config": ["libs/app-config/src/index.ts"],
+      "@client-platform/core-translate": ["libs/core-translate/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
