@@ -49,3 +49,11 @@ export const authUserInfoResponseAction = createAction(
     response: IAuthUserInfoResponse;
   }>(),
 );
+
+// ERROR
+export const authErrorAction = createAction(
+  `${PREFIX} ERROR RESPONSE`,
+  props<{
+    error: any;
+  }>(),
+);

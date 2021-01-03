@@ -30,7 +30,7 @@ export class AuthService {
   };
 
   register = (payload: IAuthRegisterUserRequest): Observable<IAuthRegisterUserResponse> => {
-    return this.httpClient.post<IAuthRegisterUserResponse>(registerUrl(this.baseUrl()), payload);
+    return this.httpClient.post<IAuthRegisterUserResponse>(registerUrl(this.baseUrl()), payload, { headers: { 'Content-Type': 'application/json' } });
   };
 
   userInfo = (): Observable<IAuthUserInfoResponse> => {

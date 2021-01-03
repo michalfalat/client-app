@@ -8,7 +8,7 @@ import { Subscription } from 'rxjs';
 @Component({
   template: '',
 })
-export class CommonComponent implements OnDestroy {
+export abstract class CommonContainer implements OnDestroy {
   subscriptions = new Subscription();
   router: Router;
   title: Title;
@@ -61,4 +61,8 @@ export class CommonComponent implements OnDestroy {
   ngOnDestroy(): void {
     this.subscriptions.unsubscribe();
   }
+
+  abstract onSuccess = (message?: string): void => {};
+
+  abstract onError = (message?: string): void => {};
 }

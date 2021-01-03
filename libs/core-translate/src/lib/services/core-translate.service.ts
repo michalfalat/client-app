@@ -13,6 +13,10 @@ export class CoreTranslateService {
     this.translateService.use(lang);
   }
 
+  getTranslation(key: string): string {
+    return this.translateService.instant(key);
+  }
+
   getLanguages(): string[] {
     return this.translateService.getLangs();
   }

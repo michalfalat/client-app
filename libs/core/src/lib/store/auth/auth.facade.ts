@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { IAuthLoginUserRequest, IAuthLoginUserResponse, IAuthRegisterUserRequest, IAuthRegisterUserResponse, IAuthUserInfoResponse } from '../../model/auth/auth.model';
@@ -16,8 +17,8 @@ export class AuthFacade {
     this.store.dispatch(authLoginRequestAction({ payload, onSucceeded }));
   }
 
-  register(payload: IAuthRegisterUserRequest, onSucceeded?: (response: IAuthRegisterUserResponse) => void): void {
-    this.store.dispatch(authRegisterRequestAction({ payload, onSucceeded }));
+  register(payload: IAuthRegisterUserRequest, onSucceeded?: (response: IAuthRegisterUserResponse) => void, onError?: (response: HttpErrorResponse) => void): void {
+    this.store.dispatch(authRegisterRequestAction({ payload, onSucceeded, onError }));
   }
 
   userInfo(onSucceeded?: (response: IAuthUserInfoResponse) => void): void {
